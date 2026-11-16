@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My SUGU ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#ffe4ef,#fff,#dceeff);color:#653b66;text-align:center;min-height:100vh;overflow-x:hidden}
+.page{min-height:100vh;display:none;padding:35px 18px;justify-content:center;align-items:center;flex-direction:column;animation:fade 1s ease}
+#home{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+h1{color:#e75491;font-size:35px;margin:15px}
+h2{color:#d94b91;margin:15px}
+p{font-size:17px;line-height:1.8;margin:12px auto;max-width:550px}
+.heart{font-size:75px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+button{border:none;padding:14px 28px;border-radius:35px;background:linear-gradient(45deg,#f47cac,#8bcaff);color:white;font-size:17px;font-weight:bold;margin:12px;cursor:pointer;box-shadow:0 5px 20px #e7a9ca;transition:.3s}
+button:active{transform:scale(.94)}
+.card{background:rgba(255,255,255,.82);border:1px solid #ffd2e6;border-radius:25px;padding:25px 18px;width:100%;max-width:550px;margin:12px auto;box-shadow:0 8px 30px #e9bfd8}
+.shayari{display:none;animation:fade .8s ease;color:#a53c78;font-size:18px;line-height:2}
+.shayari.show{display:block}
+.floating{position:fixed;bottom:-30px;font-size:23px;pointer-events:none;animation:floatUp 6s linear forwards;z-index:5}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:10}
+footer{margin:30px;color:#b66d9c;font-size:14px}
+@media(max-width:420px){h1{font-size:29px}.card{padding:20px 14px}button{font-size:15px}}
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+
+<section class="page" id="home">
+  <div class="heart">💗</div>
+  <h1>Hey My SUGU! 🌸</h1>
+  <div class="card">
+    <h2>एक छोटा सा Surprise है तुम्हारे लिए...</h2>
+    <p>मेरी प्यारी SUGU ❤️<br>आज तुम्हारे लिए कुछ ऐसा बनाया है, जिसमें मेरे दिल की सारी बातें छुपी हैं।<br><br>तो मैडम जी, तैयार हैं अपने इस छोटे से Surprise को देखने के लिए?</p>
+    <h2>🎁 सिर्फ तुम्हारे लिए!</h2>
+    <button onclick="openSurprise()">OPEN YOUR SURPRISE 💝</button>
+  </div>
+  <p>Made with ❤️ just for Suman</p>
+</section>
+
+<section class="page" id="birthday">
+  <div class="heart">🎂</div>
+  <h1>Happy Birthday Suman! 🎉</h1>
+  <h2>My Beautiful SUGU ❤️</h2>
+  <div class="card">
+    <p>17 November का दिन मेरे लिए बहुत खास है, क्योंकि इसी दिन मेरी दुनिया में खुशियां और भी खूबसूरत हो जाती हैं।<br><br>तुम सिर्फ मेरी पत्नी नहीं, बल्कि मेरी जिंदगी की सबसे खूबसूरत कहानी हो।<br><br>तुम्हारी मुस्कान मेरी खुशी है, तुम्हारा साथ मेरी ताकत है, और तुम्हारा प्यार मेरी सबसे बड़ी दौलत है।</p>
+    <h2>Love You SUGU! 💗</h2>
+  </div>
+  <button onclick="showPage('wishes')">तुम्हारे लिए कुछ शायरी ❤️</button>
+</section>
+
+<section class="page" id="wishes">
+  <h1>मेरी SUGU के नाम 💕</h1>
+  <p>नीचे दिए गए हर बटन में मेरे दिल की एक बात है...</p>
+  <div class="card">
+    <button onclick="showPoem(1)">🌹 पहली शायरी</button>
+    <div class="shayari" id="poem1">तेरी हँसी से मेरी सुबह होती है,<br>तेरी खुशी से मेरी शाम होती है।<br>तू साथ रहे बस यूँ ही जिंदगी भर,<br>मेरी हर दुआ में तेरे नाम होती है। ❤️</div>
+  </div>
+  <div class="card">
+    <button onclick="showPoem(2)">💗 दिल की बात</button>
+    <div class="shayari" id="poem2">ना चाँद चाहिए, ना सितारों की रोशनी,<br>मुझे बस चाहिए तेरी प्यारी सी हँसी।<br>हर जन्म में तेरा ही साथ मिले,<br>यही है मेरे दिल की सबसे प्यारी खुशी। 🌙</div>
+  </div>
+  <div class="card">
+    <button onclick="showPoem(3)">🌸 मेरी SUGU</button>
+    <div class="shayari" id="poem3">हजारों चेहरों में एक चेहरा खास है,<br>मेरी हर खुशी का वही एहसास है।<br>नाम उसका Suman, पुकारूँ उसे SUGU,<br>मेरी जिंदगी में उसका ही तो राज है। 💞</div>
+  </div>
+  <div class="card">
+    <button onclick="showPoem(4)">💌 एक वादा</button>
+    <div class="shayari" id="poem4">हर खुशी में तेरा साथ निभाऊँगा,<br>हर मुश्किल में तेरे पास आऊँगा।<br>जिंदगी के हर मोड़ पर SUGU,<br>तुम्हें अपना प्यार जताऊँगा। ❤️</div>
+  </div>
+  <button onclick="showPage('final')">आखिरी Surprise खोलो 🎁</button>
+</section>
+
+<section class="page" id="final">
+  <div class="heart">💝</div>
+  <h1>My Forever SUGU ❤️</h1>
+  <div class="card">
+    <h2>मेरी प्यारी Suman...</h2>
+    <p>पता नहीं मैं अपने दिल की सारी बातें शब्दों में बता पाऊँगा या नहीं...<br><br>लेकिन इतना जरूर जानता हूँ कि तुम्हारा साथ मेरी जिंदगी का सबसे खूबसूरत तोहफा है।<br><br>मैं चाहता हूँ कि तुम्हारे चेहरे की मुस्कान कभी कम न हो। तुम्हारे हर सपने को पूरा करने में तुम्हारा साथ दूँ।<br><br>Happy Birthday मेरी प्यारी SUGU! 🎂<br><br>तुम हमेशा खुश रहो। ❤️</p>
+    <h1>LOVE YOU SUGU 💗</h1>
+    <h2>17 November 🎉</h2>
+    <button onclick="celebrate()">ONCE AGAIN HAPPY BIRTHDAY 🎆</button>
+  </div>
+  <footer>Forever Yours ❤️</footer>
+</section>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById(id).style.display='flex';
+  window.scrollTo(0,0);
+  if(id==='birthday')celebrate();
+}
+function openSurprise(){showPage('birthday');sound();celebrate()}
+function showPoem(n){
+  document.getElementById('poem'+n).classList.toggle('show');
+  sound();celebrate();
+}
+function floatingHearts(){
+  const symbols=['💗','💕','🌸','💖','✨','🎊'];
+  for(let i=0;i<22;i++){
+    const el=document.createElement('div');
+    el.className='floating';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.animationDuration=(3+Math.random()*4)+'s';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),7000);
+  }
+}
+function sound(){
+  try{
+    const ctx=new(window.AudioContext||window.webkitAudioContext)();
+    const notes=[523,659,784,1046,784,1046];
+    notes.forEach((freq,i)=>{
+      const osc=ctx.createOscillator(),gain=ctx.createGain();
+      osc.type='sine';osc.frequency.value=freq;
+      gain.gain.setValueAtTime(.001,ctx.currentTime+i*.13);
+      gain.gain.exponentialRampToValueAtTime(.15,ctx.currentTime+i*.13+.03);
+      gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.13+.2);
+      osc.connect(gain);gain.connect(ctx.destination);
+      osc.start(ctx.currentTime+i*.13);osc.stop(ctx.currentTime+i*.13+.22);
+    });
+    setTimeout(()=>ctx.close(),1800);
+  }catch(e){}
+}
+const canvas=document.getElementById('confetti'),ctx=canvas.getContext('2d');
+let pieces=[];
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+window.addEventListener('resize',resize);resize();
+function celebrate(){
+  floatingHearts();pieces=[];
+  for(let i=0;i<140;i++){
+    pieces.push({x:Math.random()*canvas.width,y:-Math.random()*canvas.height,size:Math.random()*7+3,speed:Math.random()*4+2,angle:Math.random()*6,spin:Math.random()*.12-.06,color:['#ff5da2','#7dc9ff','#ffd166','#fff','#bd83f5'][Math.floor(Math.random()*5)]});
+  }
+  let frames=0;
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      p.y+=p.speed;p.angle+=p.spin;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);
+      ctx.fillStyle=p.color;ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
+      ctx.restore();
+    });
+    if(++frames<150)requestAnimationFrame(animate);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  animate();
+}
+setInterval(()=>{
+  if(document.visibilityState==='visible'){
+    const el=document.createElement('div');el.className='floating';el.textContent='💗';
+    el.style.left=Math.random()*100+'vw';document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6000);
+  }
+},1500);
+</script>
+</body>
+</html>
